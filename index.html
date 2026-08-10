@@ -12,7 +12,7 @@
   <!-- Open Graph (WhatsApp, Facebook) -->
   <meta property="og:title" content="Mis Quince | Madeline Daniela">
   <meta property="og:description" content="Te invito a celebrar mis quince años. ¡Espero verte pronto!">
-  <meta property="og:image" content="https://i.postimg.cc/VvgMx4G3/XVMV.png">
+  <meta property="og:image" content="">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="">
@@ -283,11 +283,11 @@
   const ctx = canvas.getContext('2d');
 
   const COLORS = [
-    'rgba(255, 210, 112, ',
-    'rgba(244, 190, 74, ',
-    'rgba(255, 225, 162, ',
-    'rgba(255, 240, 196, ',
-    'rgba(255, 248, 236, '
+    'rgba(255, 214, 102, ',
+    'rgba(255, 196, 64, ',
+    'rgba(255, 232, 168, ',
+    'rgba(255, 245, 212, ',
+    'rgba(255, 224, 130, '
   ];
 
   let particles = [];
@@ -333,8 +333,8 @@
     ctx.save();
     ctx.globalAlpha = opacity;
     ctx.fillStyle = color + opacity + ')';
-    ctx.shadowBlur = size * 8;
-    ctx.shadowColor = color + '0.95)';
+    ctx.shadowBlur = size * 14;
+    ctx.shadowColor = color + '1)';
 
     ctx.beginPath();
     for (let i = 0; i < 4; i++) {
@@ -353,6 +353,12 @@
     }
     ctx.closePath();
     ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(x, y, size * 0.22, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, ' + Math.min(1, opacity + 0.25) + ')';
+    ctx.fill();
+
     ctx.restore();
   }
 
