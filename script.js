@@ -22,7 +22,7 @@ const externalConfig = window.config || {};
 function resolveEventId() {
     const eventConfig = externalConfig.event || {};
     const eventIdParam = String(eventConfig.eventIdParam || 'eventId').trim() || 'eventId';
-    const defaultEventId = String(eventConfig.defaultEventId || 'misxv-mia-valentina-2026').trim() || 'misxv-mia-valentina-2026';
+    const defaultEventId = String(eventConfig.defaultEventId || 'misxv-madeline-daniela-2026').trim() || 'misxv-madeline-daniela-2026';
     const params = new URLSearchParams(window.location.search || '');
     const paramValue = String(params.get(eventIdParam) || '').trim();
     const eventId = paramValue || defaultEventId;
@@ -74,16 +74,16 @@ function createSiteConfig(remoteConfig) {
 
     return {
         seo: {
-            titulo: 'Mía Valentina | Mis XV 2026',
-            descripcion: 'Mis Quince Años de Mía Valentina - 1 de agosto, 2026',
+            titulo: 'Madeline Daniela | Mis XV 2026',
+            descripcion: 'Mis Quince Años de Madeline Daniela - 19 de septiembre, 2026',
             autor: 'Two Design',
             ...externalConfig.seo,
             ...normalizedRemoteConfig.seo
         },
         pareja: {
-            nombres: 'Mía Valentina',
-            fecha: '01-08-2026',
-            fechaVisible: '1 · 08 · 2026',
+            nombres: 'Madeline Daniela',
+            fecha: '19-09-2026',
+            fechaVisible: '19 · 09 · 2026',
             ...normalizedRemoteConfig.pareja,
             ...externalConfig.pareja
         },
@@ -96,19 +96,19 @@ function createSiteConfig(remoteConfig) {
         evento: {
             ceremonia: {
                 titulo: 'Ceremonia',
-                lugar: 'Iglesia Católica San José',
-                hora: '5:00 PM',
+                lugar: 'Salón Mario Mena',
+                hora: '6:00 PM',
                 direccion: 'Morales, Izabal',
-                ubicacionUrl: 'https://maps.google.com/?q=15.476117,-88.828629',
+                ubicacionUrl: 'https://maps.app.goo.gl/s29KauZ6VDFqJCVj8',
                 ...(localEvento.ceremonia || {}),
                 ...(remoteEvento.ceremonia || {})
             },
             recepcion: {
                 titulo: 'Recepción',
-                lugar: 'Salón Palmeras',
-                hora: '6:30 PM',
+                lugar: 'Salón Mario Mena',
+                hora: '6:00 PM',
                 direccion: 'Morales, Izabal',
-                ubicacionUrl: 'https://maps.app.goo.gl/w1bEQT8YfcrjTxfCA',
+                ubicacionUrl: 'https://maps.app.goo.gl/s29KauZ6VDFqJCVj8',
                 ...(localEvento.recepcion || {}),
                 ...(remoteEvento.recepcion || {})
             }
@@ -120,7 +120,7 @@ function createSiteConfig(remoteConfig) {
             ...normalizedRemoteConfig.textos
         },
         footer: {
-            hashtag: '#misquincemiavalentina',
+            hashtag: '#misxvmadelinedaniela',
             instagramUrl: 'https://instagram.com/thetwodesign',
             facebookUrl: 'https://facebook.com/thetwodesign',
             marcaTexto: 'Diseño',
@@ -250,76 +250,11 @@ function applyFooterConfig() {
 // ============================================
 const GuestConfig = {
     invitados: {
-        "1": { nombre: "Fam. Sagastume Palma", pases: 3 },
-        "2": { nombre: "Aida Cordón", pases: 1 },
-        "3": { nombre: "Fam. Sagastume Buezo", pases: 3 },
-        "4": { nombre: "Fam. Sagastume Carles", pases: 4 },
-        "5": { nombre: "Fam. Sagastume Chacón", pases: 4 },
-        "6": { nombre: "Lolita Sagastume", pases: 1 },
-        "7": { nombre: "Fam. Saguill Peña", pases: 5 },
-        "8": { nombre: "Fam. Duarte Sandoval", pases: 3 },
-        "9": { nombre: "Fam. Acevedo Carpio", pases: 4 },
-        "10": { nombre: "Carla de Acevedo", pases: 1 },
-        "11": { nombre: "Rosita Menéndez", pases: 2 },
-        "12": { nombre: "Marilena Menéndez", pases: 2 },
-        "13": { nombre: "Fam. Cardenas Gómez", pases: 5 },
-        "14": { nombre: "Fam. Contreras Gómez", pases: 4 },
-        "15": { nombre: "Gaser Menéndez", pases: 4 },
-        "16": { nombre: "Hugo Contreras", pases: 1 },
-        "17": { nombre: "Margie Contreras", pases: 1 },
-        "18": { nombre: "Marleny Duarte", pases: 1 },
-        "19": { nombre: "Victoria Chajón", pases: 1 },
-        "20": { nombre: "Gabriela Pérez", pases: 1 },
-        "21": { nombre: "Gisselle Alvarenga", pases: 1 },
-        "22": { nombre: "Yureyli Valencia", pases: 1 },
-        "23": { nombre: "Jenifer Barrera", pases: 1 },
-        "24": { nombre: "Gricel Hernández", pases: 1 },
-        "25": { nombre: "Saida Ramos", pases: 1 },
-        "26": { nombre: "Xiomara Gómez", pases: 1 },
-        "27": { nombre: "Marcela Chamalé", pases: 1 },
-        "28": { nombre: "Marielita Aceituno", pases: 1 },
-        "29": { nombre: "Fam. Chacón Menéndez", pases: 3 },
-        "30": { nombre: "Paul Chacón", pases: 2 },
-        "31": { nombre: "Selina Sandoval", pases: 2 },
-        "32": { nombre: "Gustavo Sandoval", pases: 2 },
-        "33": { nombre: "Personal Colegio Jireh J.M.", pases: 13 },
-        "34": { nombre: "Compañeras 20 de Octubre", pases: 7 },
-        "35": { nombre: "Dana Moscoso", pases: 1 },
-        "36": { nombre: "Rebeca James", pases: 1 },
-        "37": { nombre: "Analía García", pases: 1 },
-        "38": { nombre: "Angie Castellanos", pases: 1 },
-        "39": { nombre: "María José y Derek Cu Navas", pases: 2 },
-        "40": { nombre: "Susan Portillo", pases: 1 },
-        "41": { nombre: "Allison García", pases: 1 },
-        "42": { nombre: "Angel Acevedo", pases: 1 },
-        "43": { nombre: "César García", pases: 1 },
-        "44": { nombre: "Lucía Bardales", pases: 1 },
-        "45": { nombre: "Valentina Mijancos", pases: 1 },
-        "46": { nombre: "Keyrin Hernández", pases: 1 },
-        "47": { nombre: "Justin Varela", pases: 1 },
-        "48": { nombre: "Brandon Salazar", pases: 1 },
-        "49": { nombre: "Camila Espino", pases: 1 },
-        "50": { nombre: "Lilibeth Acevedo", pases: 1 },
-        "51": { nombre: "Victoira Ventura", pases: 1 },
-        "52": { nombre: "Danitza y Zaylin Gáldamez", pases: 2 },
-        "53": { nombre: "Melanie y Noemí Loyo", pases: 2 },
-        "54": { nombre: "Ilianita De Paz", pases: 1 },
-        "55": { nombre: "Damaris Coronado", pases: 1 },
-        "56": { nombre: "Justin Varela", pases: 1 },
-        "57": { nombre: "Brandon Salazar", pases: 1 },
-        "58": { nombre: "Nicol Orellana", pases: 1 },
-        "59": { nombre: "Eduard Peña", pases: 1 },
-        "60": { nombre: "Antonio Ramírez", pases: 1 },
-        "61": { nombre: "José Carlos Godoy", pases: 1 },
-        "62": { nombre: "Ivanna Vargas", pases: 1 },
-        "63": { nombre: "Anderson Medina", pases: 1 },
-        "64": { nombre: "Olman Ramírez", pases: 1 },
-        "65": { nombre: "Ian Orellana", pases: 1 },
-        "66": { nombre: "Kimberly Soley Alvarado", pases: 1 },
-        "67": { nombre: "Pedro Herrera", pases: 1 },
-        "68": { nombre: "Ever Nájera", pases: 1 },
-        "69": { nombre: "Fam. Acevedo Zúñiga", pases: 3 },
-        "70": { nombre: "Albita y Mario Lima", pases: 2 }
+        "1": { nombre: "Familia Lopez Hernandez", pases: 4 },
+        "2": { nombre: "Ana Lucia Morales", pases: 2 },
+        "3": { nombre: "Familia Garcia Mendoza", pases: 5 },
+        "4": { nombre: "Sofia Ramirez", pases: 1 },
+        "5": { nombre: "Carlos y Andrea Castillo", pases: 2 }
     },
     invitadoDefault: { nombre: "Invitado Especial", pases: 2 },
     paramId: 'id'
@@ -599,11 +534,41 @@ const MusicBubble = {
 };
 
 function initScrollAnimations() {
-    const elements = document.querySelectorAll('.section, .separator, .footer, .fade-in-element, .zoom-in-element');
+    const elements = document.querySelectorAll([
+        '.portada-subtitulo',
+        '.portada-nombre',
+        '.hero-subtitulo',
+        '.hero-nombre',
+        '.hero-invitado-nombre',
+        '.hero-invitado-pases',
+        '.hero-invitado-frase',
+        '.countdown-title',
+        '.countdown-fecha',
+        '.bendicion-titulo',
+        '.bendicion-oracion',
+        '.evento-icono',
+        '.evento-titulo',
+        '.evento-lugar',
+        '.evento-ciudad',
+        '.evento-hora',
+        '.dress-copy',
+        '.fotos-hashtag',
+        '.fotos-qr',
+        '.rsvp-icono',
+        '.rsvp-nombre-invitado',
+        '.rsvp-pases',
+        '.rsvp-intro',
+        '.frase-final-texto',
+        '.btn-location',
+        '.btn-calendar',
+        '#social-icons a',
+        '#footer-logo'
+    ].join(', '));
 
     elements.forEach((element, index) => {
         const revealOrder = index % 4;
         element.style.setProperty('--reveal-order', String(revealOrder));
+        element.classList.add('scroll-reveal-item');
     });
     
     const observerOptions = {
@@ -792,7 +757,7 @@ function sendWhatsAppNotification(respuesta, nombre, pasesAsignados, cantidadCon
     const mensaje = 
         '✉️ *Confirmación de asistencia*\n' +
         '━━━━━━━━━━━━━━━━━━\n' +
-        '*Evento:* Mis XV Mía Valentina\n' +
+        '*Evento:* Mis XV Madeline Daniela\n' +
         '*Invitado:* ' + nombre + '\n' +
         '*Respuesta:* ' + respuestaTexto +
         pasesTexto + '\n' +

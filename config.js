@@ -1,6 +1,6 @@
 const config = {
     event: {
-        defaultEventId: "misxv-mia-valentina-2026",
+        defaultEventId: "misxv-madeline-daniela-2026",
         eventIdParam: "eventId",
         legacyFallback: {
             read: false,
@@ -14,14 +14,14 @@ const config = {
         legacyKeyParam: "admin"
     },
     seo: {
-        titulo: "Mía Valentina | Mis XV 2026",
-        descripcion: "Mis Quince Años de Mía Valentina - 1 de agosto, 2026",
+        titulo: "Madeline Daniela | Mis XV 2026",
+        descripcion: "Mis Quince Años de Madeline Daniela - 19 de septiembre, 2026",
         autor: "Two Design"
     },
     pareja: {
-        nombres: "Mía Valentina",
-        fecha: "01-08-2026",
-        fechaVisible: "1 · 08 · 2026"
+        nombres: "Madeline Daniela",
+        fecha: "19-09-2026",
+        fechaVisible: "19 · 09 · 2026"
     },
     musica: {
         titulo: "Nuestra Canción",
@@ -30,17 +30,17 @@ const config = {
     evento: {
         ceremonia: {
             titulo: "Ceremonia",
-            lugar: "Iglesia Católica San José",
-            hora: "5:00 PM",
+            lugar: "Salón Mario Mena",
+            hora: "6:00 PM",
             direccion: "Morales, Izabal",
-            ubicacionUrl: "https://maps.google.com/?q=15.476117,-88.828629"
+            ubicacionUrl: "https://maps.app.goo.gl/s29KauZ6VDFqJCVj8"
         },
         recepcion: {
             titulo: "Recepción",
-            lugar: "Salón Palmeras",
-            hora: "6:30 PM",
+            lugar: "Salón Mario Mena",
+            hora: "6:00 PM",
             direccion: "Morales, Izabal",
-            ubicacionUrl: "https://maps.app.goo.gl/w1bEQT8YfcrjTxfCA"
+            ubicacionUrl: "https://maps.app.goo.gl/s29KauZ6VDFqJCVj8"
         }
     },
     textos: {
@@ -48,7 +48,7 @@ const config = {
         mensajePases: "Hemos reservado para ti {pases} lugares especiales"
     },
     footer: {
-        hashtag: "#misquincemiavalentina",
+        hashtag: "#misxvmadelinedaniela",
         instagramUrl: "https://instagram.com/thetwodesign",
         facebookUrl: "https://facebook.com/thetwodesign",
         marcaTexto: "Diseño",

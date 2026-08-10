@@ -1,16 +1,16 @@
 :root {
-  --color-primary: #D98FA0;
-  --color-secondary: #C9B1F2;
-  --color-accent: #B78890;
-  --color-light: #FDF6FA;
+  --color-primary: #D59DB3;
+  --color-secondary: #EBC7D5;
+  --color-accent: #D59DB3;
+  --color-light: #FFFFFF;
   --color-dark: #4A2C4A;
-  --color-gold: #D96F8C;
-  --color-gold-light: #F7D1DA;
+  --color-gold: #C887A4;
+  --color-gold-light: #F3D8E3;
   --color-white: #FFFFFF;
-  --gradient-gold: linear-gradient(135deg, #B79AD9, #D4B6EA, #E89AAF);
-  --gradient-pink-lila: linear-gradient(135deg, #B79AD9, #D4B6EA, #E89AAF);
-  --gradient-button: linear-gradient(135deg, #F8CAD4, #FCE6EC, #F9D6E0);
-  --color-button-text: #9F4F66;
+  --gradient-gold: linear-gradient(135deg, #fff6f9 0%, #f8d9e5 20%, #ecaec5 46%, #d59db3 72%, #c87f9b 100%);
+  --gradient-pink-lila: linear-gradient(135deg, #fff6f9 0%, #f8d9e5 20%, #ecaec5 46%, #d59db3 72%, #c87f9b 100%);
+  --gradient-button: linear-gradient(135deg, #fffefc 0%, #fff9f4 26%, #f6ece6 56%, #ffffff 100%);
+  --color-button-text: #D59DB3;
   --font-script: 'Great Vibes', cursive;
   --font-serif: 'Cormorant Garamond', serif;
   --font-body: 'Outfit', sans-serif;
@@ -23,7 +23,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--color-button-text);
-  background: var(--color-light);
+  background: #ffffff;
   overflow-x: hidden;
 }
 
@@ -56,6 +56,7 @@ body.portada-lock {
 .invitacion-shell {
   display: none;
   visibility: hidden;
+  position: relative;
 }
 
 .portada {
@@ -106,11 +107,12 @@ body.portada-lock {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.3;
+  animation: title-float 5.5s ease-in-out infinite;
 }
 
 .portada-nombre {
   font-family: var(--font-script);
-  font-size: 50px;
+  font-size: clamp(2.7rem, 8vw, 4.2rem);
   padding: 5px;
   line-height: 1.1;
   background: var(--gradient-pink-lila);
@@ -118,6 +120,9 @@ body.portada-lock {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 1.8rem;
+  white-space: nowrap;
+  filter: none;
+  animation: title-float 6.2s ease-in-out infinite;
 }
 
 .portada-sobre-wrapper {
@@ -132,7 +137,7 @@ body.portada-lock {
 .portada-sobre {
   width: min(280px, 75vw);
   display: block;
-  filter: drop-shadow(0 8px 24px rgba(204, 177, 254, 0.35));
+  filter: drop-shadow(0 8px 24px rgba(213, 157, 179, 0.35));
 }
 
 .portada-hint {
@@ -148,9 +153,9 @@ body.portada-lock {
 /* ── HERO ── */
 .hero {
   position: relative;
-  min-height: auto;
+  min-height: 88vh;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 2rem 2rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,6 +169,7 @@ body.portada-lock {
   background-size: cover;
   background-position: center top;
   z-index: 0;
+  transform: scale(1.08);
 }
 
 .hero-content {
@@ -177,8 +183,8 @@ body.portada-lock {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  margin-top: 130px;
-  margin-bottom: -30px;
+  margin-top: 170px;
+  margin-bottom: 10px;
 }
 
 .hero-subtitulo {
@@ -190,6 +196,7 @@ body.portada-lock {
   background-clip: text;
   line-height: 1.3;
   padding: 5px;
+  animation: title-float 5.6s ease-in-out infinite;
 }
 
 .hero-nombre {
@@ -202,6 +209,7 @@ body.portada-lock {
   background-clip: text;
   padding: 5px;
   margin-bottom: 0.5rem;
+  animation: title-float 6s ease-in-out infinite;
 }
 
 .hero-divider {
@@ -276,6 +284,7 @@ body.portada-lock {
   background-clip: text;
   line-height: 1.2;
   padding: 5px;
+  animation: title-float 5.8s ease-in-out infinite;
 }
 
 .count-grid {
@@ -294,31 +303,26 @@ body.portada-lock {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(
-    145deg,
-    rgba(253, 246, 250, 0.9),
-    rgba(204, 177, 254, 0.15)
-  );
-  border: 1px solid rgba(221, 143, 157, 0.25);
-  box-shadow: 0 2px 12px rgba(204, 177, 254, 0.15),
-              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 243, 238, 0.95), rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(214, 195, 181, 0.55);
+  box-shadow: 0 10px 24px rgba(185, 162, 146, 0.14),
+              inset 0 1px 0 rgba(255, 255, 255, 0.98),
+              inset 0 -8px 18px rgba(239, 229, 221, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .count-item:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 18px rgba(204, 177, 254, 0.25),
-              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 28px rgba(185, 162, 146, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 1),
+              inset 0 -10px 20px rgba(239, 229, 221, 0.65);
 }
 
 .count-item span {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 600;
-  background: var(--gradient-pink-lila);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #9c7e67;
   line-height: 1;
 }
 
@@ -326,7 +330,7 @@ body.portada-lock {
   font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 400;
-  color: var(--color-accent);
+  color: #b29179;
   letter-spacing: 0.04em;
   margin-top: 2px;
 }
@@ -410,6 +414,7 @@ body.portada-lock {
   width: 300px;
   height: 300px;
   filter: drop-shadow(0 2px 8px rgba(221, 143, 157, 0.3));
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .evento-titulo {
@@ -421,6 +426,7 @@ body.portada-lock {
   background-clip: text;
   line-height: 1.3;
   padding: 3px;
+  animation: title-float 5.6s ease-in-out infinite;
 }
 
 .evento-lugar {
@@ -518,7 +524,7 @@ body.portada-lock {
   font-size: 1.1rem;
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(135deg, #C9A084, #E8C4A0, #C9A084);
+  background: var(--gradient-pink-lila);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -529,7 +535,7 @@ body.portada-lock {
   width: min(180px, 55vw);
   display: block;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(204, 177, 254, 0.2);
+  box-shadow: 0 4px 16px rgba(213, 157, 179, 0.2);
   margin: 0.5rem auto;
 }
 
@@ -639,6 +645,13 @@ body.portada-lock {
 
 .rsvp .countdown-title {
   font-size: 40px;
+  animation: title-float 5.8s ease-in-out infinite;
+  background-size: auto;
+  background: var(--gradient-pink-lila);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
 }
 
 /* ── BOTONES GLOBALES (location, calendar) ── */
@@ -649,16 +662,17 @@ body.portada-lock {
   font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: var(--color-dark);
+  color: #8f6d58;
   background: var(--gradient-button);
   border-radius: 50px;
   padding: 0.7rem 2rem;
   text-decoration: none;
-  border: none;
+  border: 1px solid rgba(214, 195, 181, 0.7);
   cursor: pointer;
-  box-shadow: 0 2px 12px rgba(217, 111, 140, 0.2),
-              inset 0 1px 0 rgba(255,255,255,0.45);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 22px rgba(194, 176, 160, 0.18),
+              inset 0 1px 0 rgba(255,255,255,0.95),
+              inset 0 -6px 12px rgba(237, 228, 220, 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   margin-top: 0.5rem;
   position: relative;
   overflow: hidden;
@@ -668,17 +682,23 @@ body.portada-lock {
 .btn-calendar::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
-  border-radius: inherit;
+  top: 0;
+  left: -120%;
+  width: 58%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0));
+  transform: skewX(-22deg);
   pointer-events: none;
+  animation: button-sheen 4.8s ease-in-out infinite;
 }
 
 .btn-location:hover,
 .btn-calendar:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(217, 111, 140, 0.3),
-              inset 0 1px 0 rgba(255,255,255,0.6);
+  box-shadow: 0 14px 28px rgba(194, 176, 160, 0.25),
+              inset 0 1px 0 rgba(255,255,255,1),
+              inset 0 -8px 14px rgba(237, 228, 220, 0.7);
+  filter: brightness(1.03);
 }
 
 #rsvp-final-message {
@@ -704,8 +724,8 @@ body.portada-lock {
   align-items: center;
   justify-content: center;
   background: var(--gradient-button);
-  border: 1px solid rgba(221, 143, 157, 0.3);
-  box-shadow: 0 4px 16px rgba(204, 177, 254, 0.3),
+  border: 1px solid rgba(190, 160, 138, 0.75);
+  box-shadow: 0 4px 16px rgba(213, 157, 179, 0.3),
               inset 0 1px 0 rgba(255, 255, 255, 0.8);
   opacity: 0;
   transform: scale(0.7);
@@ -721,7 +741,7 @@ body.portada-lock {
 }
 
 #music-fab:hover {
-  box-shadow: 0 6px 22px rgba(204, 177, 254, 0.5),
+  box-shadow: 0 6px 22px rgba(213, 157, 179, 0.5),
               inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transform: scale(1.08);
 }
@@ -732,12 +752,11 @@ body.portada-lock {
 
 .music-fab-icon {
   font-size: 1.2rem;
-  background: var(--gradient-pink-lila);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #9d6f5a;
   line-height: 1;
   display: block;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95), 0 0 8px rgba(213, 157, 179, 0.25);
+  animation: music-note-bounce 1.8s ease-in-out infinite;
 }
 
 @keyframes music-pulse {
@@ -850,7 +869,7 @@ body.portada-lock {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 8px 40px rgba(204, 177, 254, 0.3);
+  box-shadow: 0 8px 40px rgba(213, 157, 179, 0.3);
   text-align: center;
 }
 
@@ -911,7 +930,7 @@ body.portada-lock {
 
 .rsvp-popup-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(204, 177, 254, 0.45);
+  box-shadow: 0 6px 20px rgba(213, 157, 179, 0.45);
 }
 
 .rsvp-popup-btn.secondary {
@@ -983,6 +1002,8 @@ body.portada-lock {
   line-height: 1.5;
   max-width: 340px;
   padding: 5px;
+  filter: none;
+  animation: title-float 6s ease-in-out infinite;
 }
 
 /* ── FOOTER ── */
@@ -994,8 +1015,8 @@ body.portada-lock {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  background: #EAD6F2;
-  border-top: 1px solid rgba(221, 143, 157, 0.2);
+  background: linear-gradient(180deg, #a47a63 0%, #8b634f 52%, #6f4f40 100%);
+  border-top: 1px solid rgba(126, 90, 68, 0.28);
 }
 
 #social-icons {
@@ -1012,30 +1033,24 @@ body.portada-lock {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(
-    145deg,
-    rgba(253, 246, 250, 0.9),
-    rgba(204, 177, 254, 0.2)
-  );
-  border: 1px solid rgba(221, 143, 157, 0.25);
-  box-shadow: 0 2px 10px rgba(204, 177, 254, 0.15),
-              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: linear-gradient(145deg, rgba(255, 248, 241, 0.98), rgba(234, 213, 196, 0.95));
+  border: 1px solid rgba(214, 188, 167, 0.4);
+  box-shadow: 0 8px 18px rgba(72, 42, 24, 0.14),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #social-icons a:hover {
   transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 6px 18px rgba(204, 177, 254, 0.3),
-              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 24px rgba(72, 42, 24, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 #social-icons a i {
   font-size: 1.1rem;
-  background: var(--gradient-pink-lila);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #8b634f;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .footer-logo {
@@ -1050,20 +1065,27 @@ body.portada-lock {
 #footer-logo {
   width: 90px;
   display: block;
+  filter: none;
 }
 
 /* ── ANIMACIONES Y EFECTOS ── */
 .section,
 .footer {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
-.section.visible,
-.section.is-visible,
-.footer.visible,
-.footer.is-visible {
+.scroll-reveal-item {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: calc(var(--reveal-order, 0) * 90ms);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-item.visible,
+.scroll-reveal-item.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1073,8 +1095,7 @@ body.portada-lock {
 .hero-nombre,
 .evento-titulo,
 .frase-final-texto {
-  background-size: 180% auto;
-  animation: text-glow-shift 7s ease-in-out infinite alternate;
+  background-size: auto;
 }
 
 .evento-icono,
@@ -1102,17 +1123,6 @@ body.portada-lock {
   }
 }
 
-@keyframes text-glow-shift {
-  0% {
-    background-position: 0% center;
-    filter: drop-shadow(0 1px 5px rgba(204, 177, 254, 0.08));
-  }
-  100% {
-    background-position: 100% center;
-    filter: drop-shadow(0 2px 9px rgba(217, 111, 140, 0.14));
-  }
-}
-
 @keyframes icon-float {
   0%, 100% {
     transform: translateY(0);
@@ -1122,14 +1132,51 @@ body.portada-lock {
   }
 }
 
+@keyframes title-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes button-sheen {
+  0%, 100% {
+    left: -120%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 0;
+  }
+  28% {
+    left: 150%;
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+}
+
+@keyframes music-note-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.08);
+  }
+}
+
 @keyframes pastel-button-glow {
   0% {
-    box-shadow: 0 2px 12px rgba(217, 111, 140, 0.16),
-                inset 0 1px 0 rgba(255,255,255,0.45);
+    box-shadow: 0 10px 20px rgba(194, 176, 160, 0.16),
+                inset 0 1px 0 rgba(255,255,255,0.9),
+                inset 0 -6px 10px rgba(237, 228, 220, 0.45);
   }
   100% {
-    box-shadow: 0 5px 18px rgba(217, 111, 140, 0.28),
-                inset 0 1px 0 rgba(255,255,255,0.62);
+    box-shadow: 0 14px 28px rgba(194, 176, 160, 0.26),
+                inset 0 1px 0 rgba(255,255,255,1),
+                inset 0 -8px 14px rgba(237, 228, 220, 0.68);
   }
 }
 
@@ -1146,12 +1193,13 @@ body.portada-lock {
 
 /* ── SPARKLES CANVAS ── */
 #sparkles-canvas {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 10;
-  opacity: 0.75;
+  z-index: 1;
+  opacity: 0.95;
+  mix-blend-mode: normal;
 }
