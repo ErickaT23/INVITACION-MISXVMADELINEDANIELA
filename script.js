@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     MusicBubble.init();
     MensajeFlota.init();
     initPortada();
-    initScrollAnimations();
     initCountdown();
     initCountdownParallax();
     initEventButtonsParallax();
@@ -532,65 +531,6 @@ const MusicBubble = {
         if (this.icon) this.icon.textContent = playing ? '♫' : '♪';
     }
 };
-
-function initScrollAnimations() {
-    const elements = document.querySelectorAll([
-        '.portada-subtitulo',
-        '.portada-nombre',
-        '.hero-subtitulo',
-        '.hero-nombre',
-        '.hero-invitado-nombre',
-        '.hero-invitado-pases',
-        '.hero-invitado-frase',
-        '.countdown-title',
-        '.countdown-fecha',
-        '.bendicion-titulo',
-        '.bendicion-oracion',
-        '.evento-icono',
-        '.evento-titulo',
-        '.evento-lugar',
-        '.evento-ciudad',
-        '.evento-hora',
-        '.dress-copy',
-        '.fotos-hashtag',
-        '.fotos-qr',
-        '.rsvp-icono',
-        '.rsvp-nombre-invitado',
-        '.rsvp-pases',
-        '.rsvp-intro',
-        '.frase-final-texto',
-        '.btn-location',
-        '.btn-calendar',
-        '#social-icons a',
-        '#footer-logo'
-    ].join(', '));
-
-    elements.forEach((element, index) => {
-        const revealOrder = index % 4;
-        element.style.setProperty('--reveal-order', String(revealOrder));
-        element.classList.add('scroll-reveal-item');
-    });
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -8% 0px',
-        threshold: 0.14
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    elements.forEach(element => {
-        observer.observe(element);
-    });
-}
 
 function initCountdown() {
     const eventDate = getEventDateFromConfig();

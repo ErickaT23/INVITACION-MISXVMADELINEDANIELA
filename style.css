@@ -367,7 +367,22 @@ body.portada-lock {
   padding: 5px;
 }
 
+.bendicion-texto {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
 .bendicion-oracion {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-button-text);
+  opacity: 0.82;
+  line-height: 1.85;
+  max-width: 390px;
+}
+
+.bendicion-versiculo {
   font-family: var(--font-body);
   font-size: 0.88rem;
   color: var(--color-button-text);
@@ -375,6 +390,9 @@ body.portada-lock {
   line-height: 1.8;
   max-width: 360px;
   font-style: italic;
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(201, 160, 132, 0.28);
 }
 
 /* ── ITINERARIO ── */
@@ -1076,20 +1094,6 @@ body.portada-lock {
   transition: none;
 }
 
-.scroll-reveal-item {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  transition-delay: calc(var(--reveal-order, 0) * 90ms);
-  will-change: opacity, transform;
-}
-
-.scroll-reveal-item.visible,
-.scroll-reveal-item.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .countdown-title,
 .portada-nombre,
 .hero-nombre,
@@ -1193,13 +1197,12 @@ body.portada-lock {
 
 /* ── SPARKLES CANVAS ── */
 #sparkles-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
-  z-index: 10;
-  opacity: 1;
-  mix-blend-mode: screen;
+  z-index: 4;
+  opacity: 0.9;
+  mix-blend-mode: normal;
 }
