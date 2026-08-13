@@ -745,7 +745,7 @@ function initAutoGallery() {
 }
 
 function sendWhatsAppNotification(respuesta, nombre, pasesAsignados, cantidadConfirmada) {
-    const numero = '50247505315';
+    const numero = '50238036431';
     const respuestaTexto = respuesta === 'si' ? 'SÍ asistirá' : 'NO asistirá';
     const pasesTexto = respuesta === 'si'
         ? '\nCantidad confirmada: ' + cantidadConfirmada + ' de ' + pasesAsignados + ' pases'
